@@ -1,5 +1,4 @@
 #include "../push_swap.h"
-#include <threads.h>
 void swap_top(t_stack *stack) {
   t_node *first;
   t_node *second;
