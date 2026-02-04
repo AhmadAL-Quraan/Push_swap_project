@@ -1,6 +1,6 @@
 # Push_swap_project
 
-The goal of this project is to make you discover algorithmic complexity in a very concrete way by using sorting  algorithms to sort stacks.
+The goal of this project is to discover algorithmic complexity in a very concrete way by using sorting  algorithms to sort stacks.
 
 
 ## Operations
