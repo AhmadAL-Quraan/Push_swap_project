@@ -2,6 +2,8 @@
 
 The goal of this project is to discover algorithmic complexity in a very concrete way by using sorting  algorithms to sort stacks.
 
+## FUll archi 
+![](images/high-level-archi.png)
 
 ## Operations
 
@@ -24,3 +26,9 @@ The last element becomes the first one.
 * rrb (reverse rotate b): Shift down all elements of stack b by one.
 The last element becomes the first one.
 * rrr : rra and rrb at the same time
+
+
+## Functions
+
+* parsing-normalization-archi
+![](images/parsing+normalization-steps.png)
