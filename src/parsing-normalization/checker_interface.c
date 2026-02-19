@@ -6,7 +6,7 @@
 /*   By: aqoraan <aqoraan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/19 00:21:50 by aqoraan           #+#    #+#             */
-/*   Updated: 2026/02/19 01:12:19 by aqoraan          ###   ########.fr       */
+/*   Updated: 2026/02/19 18:05:50 by aqoraan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,14 @@
  *
  * */
 
-void	checker_interface(char **string)
-{
-	t_flags	*flags;
+void checker_interface(char **string) {
+  t_flags *flags;
 
-	flags = malloc(sizeof(t_flags));
-	flags->adaptive = 2;
-	if (check_flags(string, flags) == 0)
-	{
-		write(1, "Error\n", 6);
-		exit(1);
-	}
-	split_function();
+  flags = malloc(sizeof(t_flags));
+  flags->adaptive = 2;
+  if (check_flags(string, flags) == 0) {
+    write(1, "Error\n", 6);
+    exit(1);
+  }
+  split_function();
 }
