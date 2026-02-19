@@ -1,8 +1,7 @@
-#include "../Libft-project/libft.h"
 #include "../push_swap.h"
 
 int main(int argc, char **argv) {
-  checker_interface(argv);
+  start_checker(argc, argv);
   // t_stack *a = malloc(sizeof(t_stack));
   // t_stack *b = malloc(sizeof(t_stack));
   // a->size = 3;
