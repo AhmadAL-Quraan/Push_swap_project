@@ -5,12 +5,29 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aqoraan <aqoraan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-	/*   Created: 2026/02/19 20:07:33 by aqoraan           #+#    #+#             */
-/*   Updated: 2026/02/19 22:22:19 by aqoraan          ###   ########.fr       */
+/*   Created: 2026/02/19 20:07:33 by aqoraan           #+#    #+#             */
+/*   Updated: 2026/02/20 06:28:11 by aqoraan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
+
+void	save_numbers(char **split, int **arr, int *count)
+{
+	int	j;
+
+	j = 0;
+	while (split[j])
+	{
+		if (check_flag(split[j]))
+		{
+			j += 1;
+			continue ;
+		}
+		(*arr)[(*count)++] = ft_atoi(split[j]);
+		j += 1;
+	}
+}
 
 int	parsing(int argc, char **string, int **arr)
 {
@@ -29,17 +46,7 @@ int	parsing(int argc, char **string, int **arr)
 	while (i < argc)
 	{
 		split = ft_split(string[i], ' ');
-		j = 0;
-		while (split[j])
-		{
-			if (check_flag(split[j]))
-			{
-				j += 1;
-				continue ;
-			}
-			(*arr)[count++] = ft_atoi(split[j]);
-			j += 1;
-		}
+		save_numbers(split, arr, &count);
 		free_split(split);
 		i += 1;
 	}

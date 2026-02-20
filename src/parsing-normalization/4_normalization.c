@@ -6,13 +6,35 @@
 /*   By: aqoraan <aqoraan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/19 19:54:11 by aqoraan           #+#    #+#             */
-/*   Updated: 2026/02/20 00:19:32 by aqoraan          ###   ########.fr       */
+/*   Updated: 2026/02/20 06:33:43 by aqoraan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-// Not long long , Not char -> digit
+/* Not long long , Not char -> digit
+ */
+
+static int	check_sign(char *string, int *idx)
+{
+	int	count_neg;
+	int	count_pos;
+
+	count_neg = 0;
+	count_pos = 0;
+	while (string[(*idx)] == '-' || string[(*idx)] == '+')
+	{
+		if (string[(*idx)] == '-')
+			count_neg += 1;
+		if (string[(*idx)] == '+')
+			count_pos += 1;
+		(*idx) += 1;
+	}
+	if (count_neg > 1 || count_pos > 1 || (count_neg == 1 && count_pos == 1))
+		return (0);
+	return (1);
+}
+
 static int	check_string(char *string)
 {
 	int			idx;
@@ -23,19 +45,8 @@ static int	check_string(char *string)
 
 	idx = 0;
 	count_digit = 0;
-	count_neg = 0;
-	count_pos = 0;
-	while (string[idx] == '-' || string[idx] == '+')
-	{
-		if (string[idx] == '-')
-			count_neg += 1;
-		if (string[idx] == '+')
-			count_pos += 1;
-		idx += 1;
-	}
-	if (count_neg > 1 || count_pos > 1 || (count_neg == 1 && count_pos == 1))
+	if (!check_sign(string, &idx))
 		return (0);
-	// check long long also char in same if statment
 	while (string[idx])
 	{
 		count_digit += 1;
@@ -76,7 +87,9 @@ int	check_flag(char *string)
 
 int	check_duplicates(int *arr)
 {
-	int i, j;
+	int	i;
+	int	j;
+
 	i = 0;
 	while (arr[i])
 	{
