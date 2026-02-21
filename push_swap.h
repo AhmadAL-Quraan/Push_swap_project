@@ -1,44 +1,46 @@
-#ifndef push_swap_h
-# define push_swap_h
-# include <stdio.h>
-# include <stdlib.h>
-# include <unistd.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aqoraan <aqoraan@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/02/19 19:58:51 by aqoraan           #+#    #+#             */
+/*   Updated: 2026/02/20 00:26:00 by aqoraan          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-typedef struct t_node
-{
-	int				content;
-	struct t_node	*next;
-}					t_node;
+#ifndef PUSH_SWAP_H
+#define PUSH_SWAP_H
+#include "Libft-project/libft.h"
+#include "validation.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
 
-typedef struct t_stack
-{
-	int				size;
-	t_node			*head;
-}					t_stack;
+typedef struct t_node {
+  int content;
+  struct t_node *next;
+} t_node;
 
-typedef struct flags
-{
-	int				bench;
-	int				complex;
-	int				medium;
-	int				simple;
-	int				adaptive;
-}					t_flags;
+typedef struct t_stack {
+  int size;
+  t_node *head;
+} t_stack;
 
-int					check_flags(char **string, t_flags *flags);
-void				rra(t_stack *stack);
-void				rrb(t_stack *stack);
-void				rrr(t_stack *stack_a, t_stack *stack_b);
-void				swap_top(t_stack *stack);
-void				sa(t_stack *a);
-void				sb(t_stack *b);
-void				ss(t_stack *a, t_stack *b);
-void				push_top(t_stack *stack_throw, t_stack *stack_host);
-void				pa(t_stack *a, t_stack *b);
-void				pb(t_stack *a, t_stack *b);
-void				rotate_up(t_stack *stack);
-void				rotate_down(t_stack *stack);
-void				ra(t_stack *a);
-void				rb(t_stack *b);
-void				rr(t_stack *a, t_stack *b);
+void rra(t_stack *stack);
+void rrb(t_stack *stack);
+void rrr(t_stack *stack_a, t_stack *stack_b);
+void swap_top(t_stack *stack);
+void sa(t_stack *a);
+void sb(t_stack *b);
+void ss(t_stack *a, t_stack *b);
+void push_top(t_stack *stack_throw, t_stack *stack_host);
+void pa(t_stack *a, t_stack *b);
+void pb(t_stack *a, t_stack *b);
+void rotate_up(t_stack *stack);
+void rotate_down(t_stack *stack);
+void ra(t_stack *a);
+void rb(t_stack *b);
+void rr(t_stack *a, t_stack *b);
 #endif
