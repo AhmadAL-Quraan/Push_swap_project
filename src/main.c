@@ -1,7 +1,7 @@
 #include "../push_swap.h"
 
 int main(int argc, char **argv) {
-  start_checker(argc, argv);
+  interface(argc, argv);
   // t_stack *a = malloc(sizeof(t_stack));
   // t_stack *b = malloc(sizeof(t_stack));
   // a->size = 3;
