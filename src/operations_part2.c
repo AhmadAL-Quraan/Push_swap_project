@@ -1,25 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   1_push-swap-interface.c                            :+:      :+:    :+:   */
+/*   operations_part2.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aqoraan <aqoraan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/21 00:27:26 by aqoraan           #+#    #+#             */
-/*   Updated: 2026/02/21 06:44:57 by aqoraan          ###   ########.fr       */
+/*   Created: 2026/02/21 07:02:53 by aqoraan           #+#    #+#             */
+/*   Updated: 2026/02/21 07:02:59 by aqoraan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	interface(int argc, char **string)
+void	ra(t_stack *a)
 {
-	t_flags	*flags;
-	int		*arr;
-	int		arr_size;
+	rotate_down(a);
+	write(1, "ra\n", 3);
+}
 
-	arr_size = start_checker(argc, string, &arr, &flags);
-	radix_sort(arr, arr_size);
-	free(flags);
-	free(arr);
+void	rb(t_stack *b)
+{
+	rotate_down(b);
+	write(1, "rb\n", 3);
+}
+
+void	rr(t_stack *a, t_stack *b)
+{
+	rotate_down(a);
+	rotate_down(b);
+	write(1, "rr\n", 3);
+}
+
+void	rra(t_stack *stack)
+{
+	rotate_up(stack);
+	write(1, "rra\n", 4);
+}
+
+void	rrb(t_stack *stack)
+{
+	rotate_up(stack);
+	write(1, "rrb\n", 4);
 }
