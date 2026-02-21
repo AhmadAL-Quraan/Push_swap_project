@@ -6,7 +6,7 @@
 /*   By: aqoraan <aqoraan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/21 00:27:26 by aqoraan           #+#    #+#             */
-/*   Updated: 2026/02/21 03:07:31 by aqoraan          ###   ########.fr       */
+/*   Updated: 2026/02/21 06:44:57 by aqoraan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,10 @@
 
 void interface(int argc, char **string) {
 
-  int counter = 0;
   t_flags *flags;
   int *arr;
-  start_checker(argc, string, &arr, &flags);
+  int arr_size = start_checker(argc, string, &arr, &flags);
+  radix_sort(arr, arr_size);
+  free(flags);
+  free(arr);
 }

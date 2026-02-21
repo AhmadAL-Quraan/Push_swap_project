@@ -6,7 +6,7 @@
 /*   By: aqoraan <aqoraan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/19 20:07:49 by aqoraan           #+#    #+#             */
-/*   Updated: 2026/02/21 02:18:28 by aqoraan          ###   ########.fr       */
+/*   Updated: 2026/02/21 06:25:02 by aqoraan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static void error(t_flags *flags) {
   exit(1);
 }
 
-void start_checker(int argc, char **string, int **arr, t_flags **flags) {
+int start_checker(int argc, char **string, int **arr, t_flags **flags) {
 
   int parse_size;
   int i;
@@ -32,6 +32,7 @@ void start_checker(int argc, char **string, int **arr, t_flags **flags) {
   (*flags) = malloc(sizeof(t_flags));
   (*flags)->adaptive = 2;
   parse_size = parsing(argc, string, arr);
-  if (!check_flags(string, flags) || !parse_size)
+  if (!check_flags(string, *flags) || !parse_size)
     error(*flags);
+  return parse_size;
 }

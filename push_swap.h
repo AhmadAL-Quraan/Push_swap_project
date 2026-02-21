@@ -6,13 +6,14 @@
 /*   By: aqoraan <aqoraan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/19 19:58:51 by aqoraan           #+#    #+#             */
-/*   Updated: 2026/02/20 00:26:00 by aqoraan          ###   ########.fr       */
+/*   Updated: 2026/02/21 06:20:01 by aqoraan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 #define PUSH_SWAP_H
 #include "Libft-project/libft.h"
+#include "sorting.h"
 #include "validation.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -28,6 +29,7 @@ typedef struct t_stack {
   t_node *head;
 } t_stack;
 
+void interface(int argc, char **string);
 void rra(t_stack *stack);
 void rrb(t_stack *stack);
 void rrr(t_stack *stack_a, t_stack *stack_b);
