@@ -11,11 +11,16 @@
 /* ************************************************************************** */
 #include "../../push_swap.h"
 
-void radix_sort(int *arr, int size) {
-  int *rankk = rank(arr, size);
-  int i = 0;
-  while (i < size) {
-    printf("%d ", rankk[i]);
-    i += 1;
-  }
+void	radix_sort(int *arr, int size)
+{
+	int	*rankk;
+	int	i;
+
+	rankk = rank(arr, size);
+	i = 0;
+	while (i < size)
+	{
+		printf("%d ", rankk[i]);
+		i += 1;
+	}
 }

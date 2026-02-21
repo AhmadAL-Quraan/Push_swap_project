@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   1_push-swap-interface.c                            :+:      :+:    :+:   */
+/*   operations_part3.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aqoraan <aqoraan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/21 00:27:26 by aqoraan           #+#    #+#             */
-/*   Updated: 2026/02/21 06:44:57 by aqoraan          ###   ########.fr       */
+/*   Created: 2026/02/21 07:03:53 by aqoraan           #+#    #+#             */
+/*   Updated: 2026/02/21 07:03:54 by aqoraan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	interface(int argc, char **string)
+void	rrr(t_stack *stack_a, t_stack *stack_b)
 {
-	t_flags	*flags;
-	int		*arr;
-	int		arr_size;
-
-	arr_size = start_checker(argc, string, &arr, &flags);
-	radix_sort(arr, arr_size);
-	free(flags);
-	free(arr);
+	rotate_up(stack_a);
+	rotate_up(stack_b);
+	write(1, "rrr\n", 4);
 }

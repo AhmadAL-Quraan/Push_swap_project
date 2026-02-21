@@ -6,13 +6,15 @@
 /*   By: aqoraan <aqoraan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/19 19:54:11 by aqoraan           #+#    #+#             */
-/*   Updated: 2026/02/20 21:18:22 by aqoraan          ###   ########.fr       */
+/*   Updated: 2026/02/21 07:18:33 by aqoraan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-/* Not long long , Not char -> digit
+/*
+ Check flags, check long long, check characters, count how many numbers
+ *
  */
 
 static int check_sign(char *string, int *idx, int *count_digit) {
@@ -57,43 +59,23 @@ static int check_string(char *string) {
   return (1);
 }
 
-int check_flag(char *string) {
-  if (ft_strcmp(string, "--bench") == 0) {
-    return (1);
-  }
-  if (ft_strcmp(string, "--simple") == 0) {
-    return (1);
-  }
-  if (ft_strcmp(string, "--complex") == 0) {
-    return (1);
-  }
-  if (ft_strcmp(string, "--medium") == 0) {
-    return (1);
-  }
-  if (ft_strcmp(string, "--adaptive") == 0) {
-    return (1);
-  }
-  return (0);
-}
-
-int check_duplicates(int *arr) {
-  int i;
+static int count_valid_int(char **split, int *count) {
   int j;
 
-  i = 0;
-  while (arr[i]) {
-    j = i + 1;
-    while (arr[j]) {
-      if (arr[i] == arr[j])
-        return (0);
+  j = 0;
+  while (split[j]) {
+    if (check_flag(split[j])) {
       j += 1;
-    }
-    i += 1;
+      continue;
+    } else if (check_string(split[j]))
+      (*count) += 1;
+    else
+      return (0);
+    j += 1;
   }
   return (1);
 }
 
-// Check flags, check long long, check characters, count how many numbers
 int normalization(int argc, char **string) {
   int i;
   char **split;
@@ -104,17 +86,8 @@ int normalization(int argc, char **string) {
   count = 0;
   while (i < argc) {
     split = ft_split(string[i], ' ');
-    j = 0;
-    while (split[j]) {
-      if (check_flag(split[j])) {
-        j += 1;
-        continue;
-      } else if (check_string(split[j]))
-        count += 1;
-      else
-        return (0);
-      j += 1;
-    }
+    if (!count_valid_int(split, &count))
+      return (0);
     free_split(split);
     i += 1;
   }

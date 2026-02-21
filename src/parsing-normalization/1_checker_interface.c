@@ -18,21 +18,22 @@
  *
  * */
 
-static void error(t_flags *flags) {
-  free(flags);
-  write(1, "Error\n", 6);
-  exit(1);
+static void	error(t_flags *flags)
+{
+	free(flags);
+	write(1, "Error\n", 6);
+	exit(1);
 }
 
-int start_checker(int argc, char **string, int **arr, t_flags **flags) {
+int	start_checker(int argc, char **string, int **arr, t_flags **flags)
+{
+	int	parse_size;
+	int	i;
 
-  int parse_size;
-  int i;
-
-  (*flags) = malloc(sizeof(t_flags));
-  (*flags)->adaptive = 2;
-  parse_size = parsing(argc, string, arr);
-  if (!check_flags(string, *flags) || !parse_size)
-    error(*flags);
-  return parse_size;
+	(*flags) = malloc(sizeof(t_flags));
+	(*flags)->adaptive = 2;
+	parse_size = parsing(argc, string, arr);
+	if (!check_flags(string, *flags) || !parse_size)
+		error(*flags);
+	return (parse_size);
 }
