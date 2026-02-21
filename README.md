@@ -31,4 +31,4 @@ The last element becomes the first one.
 ## Functions
 
 * parsing-normalization-archi
-![](images/parsing+normalization-steps.png)
+![](images/parsing-normalization-steps.png)
