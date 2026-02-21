@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_operations.c                             :+:      :+:    :+:   */
+/*   operations-logic.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aqoraan <aqoraan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/19 00:21:22 by aqoraan           #+#    #+#             */
-/*   Updated: 2026/02/21 02:02:35 by aqoraan          ###   ########.fr       */
+/*   Updated: 2026/02/21 06:39:54 by aqoraan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,16 @@ void swap_top(t_stack *stack) {
   t_node *node_throwed;
   t_node *node_hostted;
 
-  int temp; // int -> its just a content not a  node
+  int temp;
   if (!stack || stack->size < 2)
     return;
-  first = stack->head;  /// decleration of head node
-  second = first->next; /// decleration of 2nd node
-  /// swaping the content of 1st & 2nd node
+  first = stack->head;
+  second = first->next;
+
   temp = first->content;
   first->content = second->content;
   second->content = temp;
-} // push first node from stack thtow to stack host
+}
 
 void push_top(t_stack *stack_throw, t_stack *stack_host) {
   t_node *node_throwed;
@@ -45,8 +45,7 @@ void push_top(t_stack *stack_throw, t_stack *stack_host) {
   stack_host->size++;
   stack_throw->size--;
 }
-// rotate(): Shift up all elements of stack a by one.(The first element becomes
-// the last on)
+
 void rotate_down(t_stack *stack) {
   t_node *first;
   t_node *last;
@@ -71,12 +70,10 @@ void rotate_up(t_stack *stack) {
   if (!stack || stack->size < 2)
     return;
   last = stack->head;
-  // find the last node
   while (last->next != NULL)
     last = last->next;
   last_num = last->content;
   save = stack->head->content;
-  // reuse the same variable again
   last = stack->head->next;
   while (last != NULL) {
     temp = last->content;
