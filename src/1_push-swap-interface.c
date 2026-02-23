@@ -19,6 +19,7 @@ void interface(int argc, char **string)
     int arr_size;
     t_stack stack_converted;
     t_stack stack_b;
+    //t_stack stack_a;
 
     stack_b.head = NULL;
     stack_b.size = 0;
@@ -26,6 +27,7 @@ void interface(int argc, char **string)
     arr_size = start_checker(argc, string, &arr, &flags);
     stack_converted = array_stack_converter(arr, arr_size);
     radix_sort(&stack_converted, &stack_b, arr_size);
+    insertion_sort(&stack_converted,&stack_b);
 
     free(flags);
     free(arr);

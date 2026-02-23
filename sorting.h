@@ -13,12 +13,15 @@
 #ifndef SORTING_H
 # define SORTING_H
 
+typedef struct t_stack t_stack;
+
 typedef struct pair
 {
 	int	first;
 	int	second;
 }		t_pair;
 int		*rank(int *arr, int size);
+void	insertion_sort(t_stack *stack_a, t_stack *stack_b);
 
 
 #endif

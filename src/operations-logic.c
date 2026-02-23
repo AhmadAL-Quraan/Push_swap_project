@@ -16,8 +16,6 @@ void	swap_top(t_stack *stack)
 {
 	t_node	*first;
 	t_node	*second;
-	t_node	*node_throwed;
-	t_node	*node_hostted;
 	int		temp;
 
 	if (!stack || stack->size < 2)

@@ -50,4 +50,5 @@ void				rb(t_stack *b);
 void				rr(t_stack *a, t_stack *b);
 void 				radix_sort(t_stack *stack_a, t_stack *stack_b, int size);
 t_stack				 array_stack_converter(int *arr, int size);
+void	             insertion_sort(t_stack *stack_a, t_stack *stack_b);
 #endif
