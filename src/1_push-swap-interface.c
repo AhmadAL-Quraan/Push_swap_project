@@ -12,14 +12,21 @@
 
 #include "../push_swap.h"
 
-void	interface(int argc, char **string)
+void interface(int argc, char **string)
 {
-	t_flags	*flags;
-	int		*arr;
-	int		arr_size;
+    t_flags *flags;
+    int *arr;
+    int arr_size;
+    t_stack stack_converted;
+    t_stack stack_b;
 
-	arr_size = start_checker(argc, string, &arr, &flags);
-	radix_sort(arr, arr_size);
-	free(flags);
-	free(arr);
+    stack_b.head = NULL;
+    stack_b.size = 0;
+
+    arr_size = start_checker(argc, string, &arr, &flags);
+    stack_converted = array_stack_converter(arr, arr_size);
+    radix_sort(&stack_converted, &stack_b, arr_size);
+
+    free(flags);
+    free(arr);
 }

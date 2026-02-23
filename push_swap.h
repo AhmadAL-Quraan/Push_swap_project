@@ -22,6 +22,7 @@
 typedef struct t_node
 {
 	int				content;
+	int 			index;
 	struct t_node	*next;
 }					t_node;
 
@@ -47,4 +48,6 @@ void				rotate_down(t_stack *stack);
 void				ra(t_stack *a);
 void				rb(t_stack *b);
 void				rr(t_stack *a, t_stack *b);
+void 				radix_sort(t_stack *stack_a, t_stack *stack_b, int size);
+t_stack				 array_stack_converter(int *arr, int size);
 #endif

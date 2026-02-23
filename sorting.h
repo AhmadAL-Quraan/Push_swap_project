@@ -19,6 +19,6 @@ typedef struct pair
 	int	second;
 }		t_pair;
 int		*rank(int *arr, int size);
-void	radix_sort(int *arr, int size);
+
 
 #endif
