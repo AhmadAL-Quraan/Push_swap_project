@@ -6,7 +6,7 @@ The goal of this project is to discover algorithmic complexity in a very concret
 ![](images/high-level-archi.png)
 
 ## Parsing flow 
-![](images/parsing-normalization-archi.png)
+![](images/parsing-normalization-flow.png)
 
 ## Sorting-functions-flow
 ![](images/sorting-flow.png)
