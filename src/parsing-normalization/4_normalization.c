@@ -6,7 +6,7 @@
 /*   By: aqoraan <aqoraan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/19 19:54:11 by aqoraan           #+#    #+#             */
-/*   Updated: 2026/02/21 07:18:33 by aqoraan          ###   ########.fr       */
+/*   Updated: 2026/02/24 01:35:11 by aqoraan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,20 @@
  *
  */
 
+static void	normalize_spaces(char *string)
+{
+	int	idx;
+
+	idx = 0;
+	while (string[idx])
+	{
+		if (string[idx] == '\n' || string[idx] == '\t' || string[idx] == '\v'
+			|| string[idx] == '\f' || string[idx] == '\r')
+			string[idx] = ' ';
+		idx += 1;
+	}
+}
+
 static int	check_sign(char *string, int *idx, int *count_digit)
 {
 	int	count_neg;
@@ -26,7 +40,7 @@ static int	check_sign(char *string, int *idx, int *count_digit)
 	count_pos = 0;
 	while (string[(*idx)] == '-' || string[(*idx)] == '+')
 	{
-		count_digit += 1;
+		(*count_digit) += 1;
 		if (string[(*idx)] == '-')
 			count_neg += 1;
 		if (string[(*idx)] == '+')
@@ -43,8 +57,6 @@ static int	check_string(char *string)
 	int			idx;
 	int			count_digit;
 	long long	number;
-	int			count_neg;
-	int			count_pos;
 
 	idx = 0;
 	count_digit = 0;
@@ -54,7 +66,9 @@ static int	check_string(char *string)
 	{
 		count_digit += 1;
 		if (!(string[idx] >= '0' && string[idx] <= '9') || count_digit > 11)
+		{
 			return (0);
+		}
 		idx += 1;
 	}
 	number = ft_atoll(string);
@@ -88,16 +102,23 @@ int	normalization(int argc, char **string)
 {
 	int		i;
 	char	**split;
-	int		j;
 	int		count;
 
 	i = 1;
 	count = 0;
 	while (i < argc)
+		normalize_spaces(string[i++]);
+	i = 1;
+	while (i < argc)
 	{
 		split = ft_split(string[i], ' ');
-		if (!count_valid_int(split, &count))
+		if (!split)
 			return (0);
+		if (!count_valid_int(split, &count))
+		{
+			free_split(split);
+			return (0);
+		}
 		free_split(split);
 		i += 1;
 	}

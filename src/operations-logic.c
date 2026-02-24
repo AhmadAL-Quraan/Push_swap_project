@@ -6,7 +6,7 @@
 /*   By: aqoraan <aqoraan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/19 00:21:22 by aqoraan           #+#    #+#             */
-/*   Updated: 2026/02/21 06:39:54 by aqoraan          ###   ########.fr       */
+/*   Updated: 2026/02/24 01:54:37 by aqoraan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ void	swap_top(t_stack *stack)
 {
 	t_node	*first;
 	t_node	*second;
-	t_node	*node_throwed;
-	t_node	*node_hostted;
 	int		temp;
 
 	if (!stack || stack->size < 2)

@@ -1,22 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operations_part3.c                                 :+:      :+:    :+:   */
+/*   4_range_sort.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aqoraan <aqoraan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/21 07:03:53 by aqoraan           #+#    #+#             */
-/*   Updated: 2026/02/23 22:11:05 by aqoraan          ###   ########.fr       */
+/*   Created: 2026/02/24 00:21:27 by aqoraan           #+#    #+#             */
+/*   Updated: 2026/02/24 00:21:28 by aqoraan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../push_swap.h"
 
-void	rrr(t_stack *stack_a, t_stack *stack_b, t_count *cnt)
+void	range_sort(t_stack *a, t_stack *b, int size, t_count *cnt)
 {
-	cnt->rrr += 1;
-	cnt->total += 1;
-	rotate_up(stack_a);
-	rotate_up(stack_b);
-	write(1, "rrr\n", 4);
 }

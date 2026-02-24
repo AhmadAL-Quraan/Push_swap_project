@@ -1,22 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operations_part3.c                                 :+:      :+:    :+:   */
+/*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aqoraan <aqoraan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/21 07:03:53 by aqoraan           #+#    #+#             */
-/*   Updated: 2026/02/23 22:11:05 by aqoraan          ###   ########.fr       */
+/*   Created: 2026/02/23 23:20:20 by aqoraan           #+#    #+#             */
+/*   Updated: 2026/02/23 23:20:40 by aqoraan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	rrr(t_stack *stack_a, t_stack *stack_b, t_count *cnt)
+void	error(void)
 {
-	cnt->rrr += 1;
-	cnt->total += 1;
-	rotate_up(stack_a);
-	rotate_up(stack_b);
-	write(1, "rrr\n", 4);
+	write(1, "Error\n", 6);
+	exit(1);
 }
