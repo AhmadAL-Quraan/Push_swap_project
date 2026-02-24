@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rank.c                                             :+:      :+:    :+:   */
+/*   2_rank.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aqoraan <aqoraan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/21 02:05:15 by aqoraan           #+#    #+#             */
-/*   Updated: 2026/02/21 07:17:11 by aqoraan          ###   ########.fr       */
+/*   Created: 2026/02/24 00:20:03 by aqoraan           #+#    #+#             */
+/*   Updated: 2026/02/24 01:44:57 by aqoraan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,8 @@ int	*rank(int *arr, int size)
 	int		*rank_arr;
 
 	copy_arr = malloc(sizeof(t_pair) * size);
+	if (!copy_arr)
+		return (NULL);
 	i = 0;
 	while (i < size)
 	{
@@ -76,12 +78,13 @@ int	*rank(int *arr, int size)
 	}
 	heap_sort(copy_arr, size);
 	rank_arr = malloc(size * sizeof(int));
+	if (!rank_arr)
+		return (free(copy_arr), NULL);
 	i = 0;
 	while (i < size)
 	{
 		rank_arr[copy_arr[i].second] = i;
 		i += 1;
 	}
-	free(copy_arr);
-	return (rank_arr);
+	return (free(copy_arr), rank_arr);
 }

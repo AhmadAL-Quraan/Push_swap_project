@@ -46,3 +46,37 @@ int	main(int argc, char **argv)
 	//   run = run->next;
 	// }
 }
+// #include "../push_swap.h"
+// #include <stdio.h>
+
+// void print_stack(t_stack *stack)
+// {
+//     t_node *current = stack->head;
+//     while (current)
+//     {
+//         printf("%d(%d) ", current->content, current->index);
+//         current = current->next;
+//     }
+//     printf("\n");
+// }
+
+// int main(void)
+// {
+//     int arr[] = {5, 3, 8, 1, 2};
+//     int size = sizeof(arr) / sizeof(arr[0]);
+
+//     t_stack stack_a = array_stack_converter(arr, size);
+//     t_stack stack_b;
+//     stack_b.head = NULL;
+//     stack_b.size = 0;
+
+//     printf("Before radix sort:\n");
+//     print_stack(&stack_a);
+
+//     radix_sort(&stack_a, &stack_b, size);
+
+//     printf("After radix sort:\n");
+//     print_stack(&stack_a);
+
+//     return (0);
+// }

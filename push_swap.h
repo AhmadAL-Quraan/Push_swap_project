@@ -6,45 +6,49 @@
 /*   By: aqoraan <aqoraan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/19 19:58:51 by aqoraan           #+#    #+#             */
-/*   Updated: 2026/02/21 06:20:01 by aqoraan          ###   ########.fr       */
+/*   Updated: 2026/02/24 02:39:54 by aqoraan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
-# include "Libft-project/libft.h"
-# include "sorting.h"
-# include "validation.h"
-# include <stdio.h>
-# include <stdlib.h>
-# include <unistd.h>
+#define PUSH_SWAP_H
+#include "Libft-project/libft.h"
+#include "sorting.h"
+#include "validation.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
 
-typedef struct t_node
-{
-	int				content;
-	struct t_node	*next;
-}					t_node;
+typedef struct f_context {
+  int *arr;
+  int size;
+  t_flags *flags;
+  t_stack *a;
+  t_stack *b;
+  t_count *cnt;
 
-typedef struct t_stack
-{
-	int				size;
-	t_node			*head;
-}					t_stack;
+} t_context;
 
-void				interface(int argc, char **string);
-void				rra(t_stack *stack);
-void				rrb(t_stack *stack);
-void				rrr(t_stack *stack_a, t_stack *stack_b);
-void				swap_top(t_stack *stack);
-void				sa(t_stack *a);
-void				sb(t_stack *b);
-void				ss(t_stack *a, t_stack *b);
-void				push_top(t_stack *stack_throw, t_stack *stack_host);
-void				pa(t_stack *a, t_stack *b);
-void				pb(t_stack *a, t_stack *b);
-void				rotate_up(t_stack *stack);
-void				rotate_down(t_stack *stack);
-void				ra(t_stack *a);
-void				rb(t_stack *b);
-void				rr(t_stack *a, t_stack *b);
+void interface(int argc, char **string);
+
+void rra(t_stack *stack, t_count *cnt);
+void rrb(t_stack *stack, t_count *cnt);
+void rrr(t_stack *stack_a, t_stack *stack_b, t_count *cnt);
+void sa(t_stack *a, t_count *cnt);
+void sb(t_stack *b, t_count *cnt);
+void ss(t_stack *a, t_stack *b, t_count *cnt);
+void pa(t_stack *a, t_stack *b, t_count *cnt);
+void pb(t_stack *a, t_stack *b, t_count *cnt);
+void ra(t_stack *a, t_count *cnt);
+void rb(t_stack *b, t_count *cnt);
+void rr(t_stack *a, t_stack *b, t_count *cnt);
+
+void rotate_up(t_stack *stack);
+void rotate_down(t_stack *stack);
+void push_top(t_stack *stack_throw, t_stack *stack_host);
+void swap_top(t_stack *stack);
+
+void bench(int *arr, int size, t_flags *flags, t_count *cnt);
+
+void error();
 #endif

@@ -6,7 +6,7 @@
 /*   By: aqoraan <aqoraan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/19 20:07:59 by aqoraan           #+#    #+#             */
-/*   Updated: 2026/02/21 07:09:18 by aqoraan          ###   ########.fr       */
+/*   Updated: 2026/02/24 02:04:08 by aqoraan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,16 +50,16 @@ int	check_flag(char *string)
 	return (0);
 }
 
-int	check_duplicates(int *arr)
+int	check_duplicates(int *arr, int size)
 {
 	int	i;
 	int	j;
 
 	i = 0;
-	while (arr[i])
+	while (i < size)
 	{
 		j = i + 1;
-		while (arr[j])
+		while (j < size)
 		{
 			if (arr[i] == arr[j])
 				return (0);

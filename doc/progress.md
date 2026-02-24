@@ -11,4 +11,7 @@
 * Editing the archi diagram.
 
 * Finished implementing ranking (masking) for data, to sort them easier based on ranks from (0 -> n-1) instead of dealing with normal inputs which could be negative.
+** Sunday 23/2/2026**
+
+*Finished radix_soart_algorthim.
 
