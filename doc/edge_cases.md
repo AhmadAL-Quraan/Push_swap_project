@@ -1,2 +1,2 @@
 * Counter code 
-* Handle 3, 5
+* ~~Handle 3, 5~~
