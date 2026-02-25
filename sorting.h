@@ -6,7 +6,7 @@
 /*   By: aqoraan <aqoraan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/21 02:34:14 by aqoraan           #+#    #+#             */
-/*   Updated: 2026/02/24 01:41:01 by aqoraan          ###   ########.fr       */
+/*   Updated: 2026/02/25 08:31:17 by aqoraan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,4 +54,7 @@ void insertion_sort(t_stack *a, t_stack *b, int size, t_count *cnt);
 void range_sort(t_stack *a, t_stack *b, int size, t_count *cnt);
 char *give_disorder_algorithm(float disorder);
 void free_stack(t_stack *stack);
+int check_is_sorted(t_stack *a);
+void sort_three(t_stack *a, t_count *cnt);
+void sort_two(t_stack *a, t_count *cnt);
 #endif
