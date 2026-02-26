@@ -13,7 +13,7 @@ The goal of this project is to discover algorithmic complexity in a very concret
 
 ## Sorting algorithms used 
 
-[](images/insertion-sort-flow.png)
+![](images/insertion-sort-flow.png)
 
 
 * [Range-sort-flow](https://lucid.app/lucidchart/3fd043e6-1ceb-47f8-9c95-d9e9ee9683ac/edit?viewport_loc=-4274%2C-1318%2C3798%2C2365%2C0_0&invitationId=inv_d72c658a-d3d3-4373-b05d-3f3c341c0835)
