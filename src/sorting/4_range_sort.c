@@ -6,7 +6,7 @@
 /*   By: aqoraan <aqoraan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 00:21:27 by aqoraan           #+#    #+#             */
-/*   Updated: 2026/02/25 11:37:50 by aqoraan          ###   ########.fr       */
+/*   Updated: 2026/02/26 13:30:07 by aqoraan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,11 +63,22 @@ static void	move_max_to_top(t_stack *b, int pos, t_count *cnt)
 	}
 }
 
+static void	move_back_to_b(t_stack *a, t_stack *b, t_count *cnt)
+{
+	int	max_pos;
+
+	while (b->size > 0)
+	{
+		max_pos = find_max_pos(b);
+		move_max_to_top(b, max_pos, cnt);
+		pa(a, b, cnt);
+	}
+}
+
 void	range_sort(t_stack *a, t_stack *b, int size, t_count *cnt)
 {
 	int	range;
 	int	i;
-	int	max_pos;
 
 	if (check_two_three(a, cnt))
 		return ;
@@ -89,10 +100,5 @@ void	range_sort(t_stack *a, t_stack *b, int size, t_count *cnt)
 		else
 			ra(a, cnt);
 	}
-	while (b->size > 0)
-	{
-		max_pos = find_max_pos(b);
-		move_max_to_top(b, max_pos, cnt);
-		pa(a, b, cnt);
-	}
+	move_back_to_b(a, b, cnt);
 }

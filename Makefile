@@ -6,14 +6,14 @@
 #    By: aqoraan <aqoraan@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/25 09:49:28 by aqoraan           #+#    #+#              #
-#    Updated: 2026/02/25 11:29:21 by aqoraan          ###   ########.fr        #
+#    Updated: 2026/02/26 14:14:24 by aqoraan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-GREEN=\e[32m
-RED=\e[35m
-RESET=\e[0m
+GREEN="\e[32m"
+RED="\e[35m"
+RESET="\e[0m"
 
 NAME = push_swap
 CC = cc
@@ -38,21 +38,21 @@ all: $(NAME)
 	@$(CC) $(FLAGS) -c $< -o $@
 
 $(NAME): $(OBJS)
-	@echo  "${GREEN}Compiling...${RESET}"
+	@echo -e "$${GREEN}Compiling...$${RESET}"
 	@make -C $(LIBFT_DIR) --no-print-directory
 	@$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
-	@echo  "${RED}Done, try test_100 or test_500${RESET}"
+	@echo -e "$${RED}Done, try \"make test_100\" or \"make test_500\"$${RESET}"
 
 clean:
 	@make -C $(LIBFT_DIR) clean --no-print-directory
 	@$(RM) $(OBJS) 
 
 fclean: clean
-	@echo "${GREEN}Deleting objects...${RESET}"
+	@echo -e "$${GREEN}Deleting object files...$${RESET}"
 	@make -C $(LIBFT_DIR) fclean --no-print-directory
 	@$(RM) $(NAME)
 	@$(RM) *.txt
-	@echo "${RED}Done${RESET}"
+	@echo -e "$${RED}Done$${RESET}"
 
 test_100:
 	@shuf -i 0-9999 -n 100 > args.txt
