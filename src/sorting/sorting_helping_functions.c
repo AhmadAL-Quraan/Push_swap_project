@@ -6,7 +6,7 @@
 /*   By: aqoraan <aqoraan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/23 19:04:27 by aqoraan           #+#    #+#             */
-/*   Updated: 2026/02/24 01:40:50 by aqoraan          ###   ########.fr       */
+/*   Updated: 2026/02/25 08:14:10 by aqoraan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,4 +55,25 @@ void	free_stack(t_stack *stack)
 		free(tmp);
 	}
 	free(stack);
+}
+
+int	check_is_sorted(t_stack *a)
+{
+	t_node	*node;
+	t_node	*node2;
+
+	if (!a->head->next)
+		return (1);
+	node = a->head;
+	node2 = a->head->next;
+	while (node2 != NULL)
+	{
+		if (node->content > node2->content)
+		{
+			return (0);
+		}
+		node = node->next;
+		node2 = node2->next;
+	}
+	return (1);
 }

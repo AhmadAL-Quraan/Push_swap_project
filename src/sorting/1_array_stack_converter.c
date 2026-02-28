@@ -6,7 +6,7 @@
 /*   By: aqoraan <aqoraan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 00:19:55 by aqoraan           #+#    #+#             */
-/*   Updated: 2026/02/24 02:13:52 by aqoraan          ###   ########.fr       */
+/*   Updated: 2026/02/25 07:30:47 by aqoraan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static t_stack	*stack_init(void)
 	return (stack);
 }
 
-static int	new_node(int *ranked_arr, int *arr, t_stack *stack, int size)
+static int	new_node(int *ranked_arr, t_stack *stack, int size)
 {
 	int		i;
 	t_node	*last;
@@ -40,8 +40,8 @@ static int	new_node(int *ranked_arr, int *arr, t_stack *stack, int size)
 			free_stack(stack);
 			return (0);
 		}
-		node_idx->content = arr[i];
-		node_idx->index = ranked_arr[i++];
+		node_idx->content = ranked_arr[i];
+		node_idx->index = i++;
 		node_idx->next = NULL;
 		if (!stack->head)
 			stack->head = node_idx;
@@ -67,7 +67,7 @@ t_stack	*array_stack_converter(int *arr, int size)
 		free(stack);
 		return (NULL);
 	}
-	if (!new_node(ranked_arr, arr, stack, size))
+	if (!new_node(ranked_arr, stack, size))
 	{
 		free(ranked_arr);
 		return (NULL);

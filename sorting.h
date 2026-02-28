@@ -6,7 +6,7 @@
 /*   By: aqoraan <aqoraan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/21 02:34:14 by aqoraan           #+#    #+#             */
-/*   Updated: 2026/02/24 01:41:01 by aqoraan          ###   ########.fr       */
+/*   Updated: 2026/02/26 14:15:42 by aqoraan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,12 @@ int *rank(int *arr, int size);
 float disorder_metric(int *arr, int size);
 t_stack *array_stack_converter(int *arr, int size);
 void radix_sort(t_stack *stack_a, t_stack *stack_b, int size, t_count *cnt);
-void insertion_sort(t_stack *a, t_stack *b, int size, t_count *cnt);
+void insertion_sort(t_stack *a, t_stack *b, t_count *cnt);
 void range_sort(t_stack *a, t_stack *b, int size, t_count *cnt);
 char *give_disorder_algorithm(float disorder);
 void free_stack(t_stack *stack);
+int check_is_sorted(t_stack *a);
+void sort_three(t_stack *a, t_count *cnt);
+void sort_two(t_stack *a, t_count *cnt);
+int check_two_three(t_stack *a, t_count *cnt);
 #endif

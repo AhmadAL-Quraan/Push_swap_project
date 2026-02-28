@@ -69,23 +69,23 @@ OBJS_B=$(SRCS_B:.c=.o)
 # So when the target $(NAME) is executed, make file will search for .o file for any 
 #specifc file, then it gonna generate it from this rule if it's not exists or old
 %.o: %.c 
-	$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 #this command mean take the OBJS and put into the NAME with the commands of AR
 # This the first target that make file starts when you write "make"
 $(NAME): $(OBJS) $(OBJS_B)
-		$(AR) $(NAME) $(OBJS) $(OBJS_B)
+		@$(AR) $(NAME) $(OBJS) $(OBJS_B)
 
 # But when we say make all --> it start builds from here (first target)
 all: $(NAME)
 #for the bonus part
 #The clean will remove all .o files
 clean:
-	$(RM) $(OBJS) $(OBJS_B)
+	@$(RM) $(OBJS) $(OBJS_B)
 #The fclean (full clean) will do the clean + remove the .a file
 fclean: clean
-	$(RM) $(NAME)
+	@$(RM) $(NAME)
 
-	#re will do fclean and he will do the make again
+#re will do fclean and he will do the make again
 re : fclean all
 # so: $(OBJS)
 # 	$(CC) -shared -o libft.so $(OBJS) $(OBJS_B)

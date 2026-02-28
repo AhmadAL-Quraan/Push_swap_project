@@ -6,7 +6,7 @@
 /*   By: aqoraan <aqoraan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/19 19:54:11 by aqoraan           #+#    #+#             */
-/*   Updated: 2026/02/24 01:35:11 by aqoraan          ###   ########.fr       */
+/*   Updated: 2026/02/25 08:06:42 by aqoraan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,8 @@ static int	check_string(char *string)
 	idx = 0;
 	count_digit = 0;
 	if (!check_sign(string, &idx, &count_digit))
+		return (0);
+	if (!string[idx])
 		return (0);
 	while (string[idx])
 	{
