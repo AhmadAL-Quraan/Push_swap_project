@@ -6,7 +6,7 @@
 /*   By: aqoraan <aqoraan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/23 19:42:13 by aqoraan           #+#    #+#             */
-/*   Updated: 2026/02/24 00:40:41 by aqoraan          ###   ########.fr       */
+/*   Updated: 2026/03/01 21:46:50 by aqoraan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,15 @@ static void	print_disorder(float disorder)
 	write(2, "%\n", 2);
 }
 
-static void	print_strategy(t_flags *flags, float disorder)
+static void	print_strategy(t_flags *flags, float disorder, int size)
 {
 	if (flags->adaptive)
 	{
 		write_str(2, "[bench] strategy: Adaptive / ");
-		write_str(2, give_disorder_algorithm(disorder));
+		if (size <= 10)
+			write_str(2, "O(n)");
+		else
+			write_str(2, give_disorder_algorithm(disorder));
 	}
 	else if (flags->simple)
 	{
@@ -97,7 +100,7 @@ void	bench(int *arr, int size, t_flags *flags, t_count *cnt)
 
 	disorder = disorder_metric(arr, size);
 	print_disorder(disorder);
-	print_strategy(flags, disorder);
+	print_strategy(flags, disorder, size);
 	print_ops_1(cnt);
 	print_ops_2(cnt);
 }

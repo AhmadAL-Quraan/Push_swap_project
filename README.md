@@ -19,7 +19,7 @@ The goal of this project is to discover algorithmic complexity in a very concret
 
 ### [Range-sort-flow](https://lucid.app/lucidchart/3fd043e6-1ceb-47f8-9c95-d9e9ee9683ac/edit?viewport_loc=-4274%2C-1318%2C3798%2C2365%2C0_0&invitationId=inv_d72c658a-d3d3-4373-b05d-3f3c341c0835)
 
-### Binary Radix sort
+### [Binary Radix sort](https://lucid.app/lucidchart/3a94f45e-de66-46b7-9621-2969e74841ff/edit?viewport_loc=200%2C-740%2C2099%2C1171%2C0_0&invitationId=inv_14eb553a-13b9-422c-a755-7458f1a8e416)
 
 ## Operations
 

@@ -6,7 +6,7 @@
 #    By: aqoraan <aqoraan@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/25 09:49:28 by aqoraan           #+#    #+#              #
-#    Updated: 2026/02/26 14:14:24 by aqoraan          ###   ########.fr        #
+#    Updated: 2026/03/01 15:20:56 by aqoraan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,11 +44,12 @@ $(NAME): $(OBJS)
 	@echo -e "$${RED}Done, try \"make test_100\" or \"make test_500\"$${RESET}"
 
 clean:
+	@echo -e "$${GREEN}Deleting object files from Libft\nDeleting push_swap object files$${RESET}"
 	@make -C $(LIBFT_DIR) clean --no-print-directory
 	@$(RM) $(OBJS) 
 
 fclean: clean
-	@echo -e "$${GREEN}Deleting object files...$${RESET}"
+	@echo -e "$${GREEN}Deleting libft.a\nDeleting push_swap linker file\nDeleting *.txt files"
 	@make -C $(LIBFT_DIR) fclean --no-print-directory
 	@$(RM) $(NAME)
 	@$(RM) *.txt

@@ -6,7 +6,7 @@
 /*   By: aqoraan <aqoraan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/23 19:04:11 by aqoraan           #+#    #+#             */
-/*   Updated: 2026/02/25 11:37:35 by aqoraan          ###   ########.fr       */
+/*   Updated: 2026/03/01 15:07:15 by aqoraan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	radix_sort(t_stack *stack_a, t_stack *stack_b, int size, t_count *cnt)
 	int	i;
 	int	j;
 
-	if (check_two_three(stack_a, cnt))
+	if (check_is_sorted(stack_a) || check_two_three(stack_a, cnt))
 		return ;
 	max_bits = find_max_bits(stack_a);
 	i = 0;

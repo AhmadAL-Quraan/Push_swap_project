@@ -6,7 +6,7 @@
 /*   By: aqoraan <aqoraan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 00:21:27 by aqoraan           #+#    #+#             */
-/*   Updated: 2026/02/26 13:30:07 by aqoraan          ###   ########.fr       */
+/*   Updated: 2026/03/01 15:07:25 by aqoraan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ void	range_sort(t_stack *a, t_stack *b, int size, t_count *cnt)
 	int	range;
 	int	i;
 
-	if (check_two_three(a, cnt))
+	if (check_is_sorted(a) || check_two_three(a, cnt))
 		return ;
 	range = ft_sqrt(size);
 	i = 0;
